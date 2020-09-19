@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
 import { connect } from "react-redux";
+import { setting_up_grid } from '../actions/grid_actions';
 
 
-function Landing() {
+function Landing({ setting_up_grid, history }) {
 
     const [grid_data, setGrid_data] = useState({
-        rows: 0,
-        cols: 0,
+         rows: 0,
+         cols: 0,
          bg_color: 'white',
          accent_color: 'black',
-         preset_grid: 'none',
+         preset_grid: false,
+        random_grid: false
     });
 
     const change_handler = (e) => {
@@ -20,9 +22,13 @@ function Landing() {
 
     };
 
+
     const submit_handler = (e) => {
-        e.preventDefault()
+        console.log('this is the data in the submit handler')
         console.log(grid_data)
+        e.preventDefault()
+        setting_up_grid(grid_data)
+        history.push('/dashboard')
     }
 
     const colors = [
@@ -43,6 +49,29 @@ function Landing() {
     return (
         <> #TODO create a sorta nav bar for presets, create your own, or completely random
             <form onSubmit={submit_handler}>
+                <section className='choices'>
+                    <div className='grid_empty'>
+                        <span className='grid_random'>
+                            <label className='grid_label' htmlFor='rows'>Empty Grid</label>
+                            <input className='grid_input'
+                                   type='radio'
+                                   onChange={change_handler}
+                                   name='random_grid'
+                                   value={false}/>
+                        </span>
+                        <span className='grid_or'>or</span>
+                        <span className='grid_random'>
+                            <input className='grid_input'
+                                   type='radio'
+                                   onChange={change_handler}
+                                   name='random_grid'
+                                   value={true}/>
+                            <label className='grid_label' htmlFor='cols'>Random Grid</label>
+                        </span>
+                    </div>
+                    <p className='size_range'>continue on to choose your number of rows and columns</p>
+                    <a className='btn_links' href='#first_option'>continue</a>
+                </section>
                 <section className='choices' id='first_option'>
                     <div className='grid_section'>
                         <span className='grid_row'>
@@ -68,7 +97,12 @@ function Landing() {
                     <p className='size_range'>choose your grid size (10 - 100)</p>
                     <a className='btn_links' href='#second_option'>continue</a>
                     <p className='size_range'>or choose random</p>
-                    <a className='btn_links' href='#second_option'>Random</a>
+                    <input onChange={change_handler}
+                            type='radio'
+                            name='random_size'
+                            value={true}
+                            className='btn_links'
+                            />
                 </section>
 
                 <section className='choices'>
@@ -114,7 +148,7 @@ function Landing() {
 }
 
 const mapDispatchToProps = {
-
+    setting_up_grid
 };
 
 function mapStateToProps(state) {

@@ -1,8 +1,30 @@
+html {
+  scroll-behavior: smooth;
+}
+
 .App {
   margin: 0 auto;
   padding: 3rem;
   width: 90%;
   background-color: lightyellow;
+}
+
+.grid_or {
+  font-size: 3rem;
+  margin: 1.5rem auto;
+}
+
+.grid_empty {
+  display: flex;
+  flex-direction: column-reverse;
+  margin: 0 auto;
+
+}
+
+.grid_random {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .size_range {
@@ -60,6 +82,7 @@
 
 .choices {
   margin: 10rem auto 15rem auto;
+  height: 70rem;
 }
 
 .color_section {

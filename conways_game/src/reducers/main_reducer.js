@@ -1,4 +1,6 @@
-
+import { SETTING_GRID_PROPERTIES,
+         SETTING_RANDOM_GRID,
+} from '../actions/grid_actions';
 
 
 const initial_state = {
@@ -6,12 +8,31 @@ const initial_state = {
     cols: 25,
     bg_color: 'white',
     accent_color: 'black',
-    preset_grid: 'none',
+    preset_grid: false,
+    random_grid: false,
+    random_size: false
 
 };
 
 export function Main_Reducer(state = initial_state, action) {
     switch (action.type) {
+        case SETTING_GRID_PROPERTIES:
+            return {
+                ...state,
+                rows: action.payload.data.rows,
+                cols: action.payload.data.cols,
+                bg_color: action.payload.data.bg_color,
+                accent_color: action.payload.data.accent_color
+            };
+        case SETTING_RANDOM_GRID:
+            return {
+                ...state,
+                rows: action.payload.data.rows,
+                cols: action.payload.data.cols,
+                bg_color: action.payload.data.bg_color,
+                accent_color: action.payload.data.accent_color,
+                random_grid: true
+            }
         default:
             return state
     }
