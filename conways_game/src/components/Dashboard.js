@@ -116,7 +116,7 @@ console.log(grid_state)
                             style={{
                             width: 20,
                             height: 20,
-                            backgroundColor: grid[i][k] ? grid_state.bg_color : grid_state.accent_color,
+                            backgroundColor: grid[i][k] ? grid_state.accent_color : grid_state.bg_color,
                             border: "solid 1px black"
                         }}
                         />

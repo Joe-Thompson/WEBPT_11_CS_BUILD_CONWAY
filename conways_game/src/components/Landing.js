@@ -35,21 +35,17 @@ function Landing({ setting_up_grid, history }) {
         'black',
         'white',
         'teal',
-        'cadetblue',
         'coral',
-        'crimson',
         'forestgreen',
         'darkorchid',
-        'hotpink',
         'indigo',
-        'dodgerblue',
-        'salmon'
+        'dodgerblue'
     ]
 
     return (
-        <> #TODO create a sorta nav bar for presets, create your own, or completely random
+        <>
             <form onSubmit={submit_handler}>
-                <section className='choices'>
+                <section className='choices grid_choice_bg' id='start'>
                     <div className='grid_empty'>
                         <span className='grid_random'>
                             <label className='grid_label' htmlFor='rows'>Empty Grid</label>
@@ -61,6 +57,7 @@ function Landing({ setting_up_grid, history }) {
                         </span>
                         <span className='grid_or'>or</span>
                         <span className='grid_random'>
+                            <p className='size_range'>Start by choosing an empty grid, or a random initial state</p>
                             <input className='grid_input'
                                    type='radio'
                                    onChange={change_handler}
@@ -72,7 +69,8 @@ function Landing({ setting_up_grid, history }) {
                     <p className='size_range'>continue on to choose your number of rows and columns</p>
                     <a className='btn_links' href='#first_option'>continue</a>
                 </section>
-                <section className='choices' id='first_option'>
+                <section className='choices grid_size_bg' id='first_option'>
+                    <p className='size_range size_title'>Choose your grid dimensions, or allow us to build it for you</p>
                     <div className='grid_section'>
                         <span className='grid_row'>
                             <label className='grid_label' htmlFor='rows'>Number of Rows</label>
@@ -105,7 +103,7 @@ function Landing({ setting_up_grid, history }) {
                             />
                 </section>
 
-                <section className='choices'>
+                <section className='choices grid_color_bg'>
                     <div className='color_section'>
                         {colors.map((item, index) => {
                             return (
@@ -124,7 +122,7 @@ function Landing({ setting_up_grid, history }) {
                     <a className='btn_links' href='#third_option'>Next</a>
                 </section>
 
-                <section className='choices'>
+                <section className='choices grid_color_accent'>
                         <div className='color_section'>
                         {colors.map((item, index) => {
                             return (
