@@ -1,10 +1,11 @@
 import React, {useCallback, useRef, useState} from 'react';
+import { connect } from "react-redux";
 import produce from "immer";
 
-function Dashboard() {
+function Dashboard({ grid_state }) {
 
-    const numRows = 50;
-    const numCols = 50;
+    const numRows = Number(grid_state.rows);
+    const numCols = Number(grid_state.cols);
     const ops = [
         [0, 1],
         [0, -1],
@@ -24,9 +25,21 @@ function Dashboard() {
         return rows
     }
 
+    const random_grid = () => {
+        const rows = [];
+                for (let i = 0; i < numRows; i++) {
+                    rows.push(Array.from(Array(numCols), () => Math.random() > .7 ? 1 : 0));
+                }
+                return rows
+    }
+
     const [running, setRunning] = useState(false);
     const [grid, setGrid] = useState(() => {
-        return empty_grid()
+        if (!grid_state.random_grid) {
+            return empty_grid()
+        } else {
+            return random_grid()
+        }
     })
 
     const runningRef = useRef(running);
@@ -58,7 +71,8 @@ function Dashboard() {
         })
         setTimeout(runGame, 100)
     },[])
-
+console.log('this is the current state of the app from line 63 in dashboard')
+console.log(grid_state)
     return (
         <>
         <button
@@ -72,6 +86,7 @@ function Dashboard() {
         >
             {running ? "stop" : "start"}
         </button>
+            # TODO move to an if block for random grid or empty grid on line 20
             <button onClick={() => {
                 const rows = [];
                 for (let i = 0; i < numRows; i++) {
@@ -101,7 +116,7 @@ function Dashboard() {
                             style={{
                             width: 20,
                             height: 20,
-                            backgroundColor: grid[i][k] ? "blue" : undefined,
+                            backgroundColor: grid[i][k] ? grid_state.bg_color : grid_state.accent_color,
                             border: "solid 1px black"
                         }}
                         />
@@ -112,4 +127,14 @@ function Dashboard() {
     )
 }
 
-export default Dashboard
+const mapDispatchToProps = {
+
+};
+
+function mapStateToProps(state) {
+    return {
+        grid_state: state
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Dashboard)
