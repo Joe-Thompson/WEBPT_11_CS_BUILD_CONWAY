@@ -8,8 +8,8 @@ function Landing({ setting_up_grid, history }) {
     const [grid_data, setGrid_data] = useState({
          rows: 0,
          cols: 0,
-         bg_color: 'white',
-         accent_color: 'black',
+         bg_color: 'black',
+         accent_color: 'white',
          preset_grid: false,
         random_grid: false
     });
