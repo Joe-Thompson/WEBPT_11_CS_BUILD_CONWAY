@@ -367,3 +367,88 @@ ion-icon {
   margin-bottom: -.2rem;
   font-size: 2.2rem;
 }
+
+.about_cover_photo {
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+}
+
+.about_title_photo {
+  width: 50rem;
+  height: 30rem;
+  border-radius: 1rem;
+}
+
+.about_bio {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-left: 15rem;
+}
+
+.about_name_title {
+  font-size: 2.3rem;
+  margin-bottom: -1rem;
+}
+
+.about_bio_text {
+  line-height: 1.4;
+  font-size: 1.2rem;
+}
+
+.still_lifes {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 4.8rem;
+  margin: 1rem 4rem;
+}
+
+.still_lifes img{
+  width: 8rem;
+  height: 8rem;
+  margin: 1rem 6rem;
+}
+
+.still_lifes p{
+  width: 45%;
+  margin: 1rem 2.8rem;
+  align-self: flex-end;
+  border-bottom: 1px solid black;
+}
+
+.still_lifes h2 {
+  margin: 1.5rem .2rem;
+  width: 5rem;
+}
+
+.life_form_section_header {
+  font-size: 2rem;
+  border-bottom: 1px solid black;
+  width: 20%;
+  display: flex;
+  justify-content: center;
+}
+
+.life_form_header{
+  font-size: 5rem;
+  font-weight: 100;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.glider_gun{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.glider_gun p{
+  width: 49%;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+
