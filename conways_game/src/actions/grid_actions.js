@@ -7,8 +7,8 @@ export function setting_up_grid(data) {
     return dispatch => {
         try {
             if (data.random_size === 'true') {
-                data.rows = Math.floor(Math.random() * 100) + 10;
-                data.cols = Math.floor(Math.random() * 100) + 10;
+                data.rows = Math.floor(Math.random() * 50) + 10;
+                data.cols = Math.floor(Math.random() * 50) + 10;
             }
             if (data.random_grid === 'true') {
                 dispatch({ type: SETTING_RANDOM_GRID, payload: {
