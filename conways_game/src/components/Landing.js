@@ -77,7 +77,7 @@ function Landing({ setting_up_grid, history }) {
                             <input className='grid_input'
                                    type='number'
                                    min='10'
-                                   max='100'
+                                   max='50'
                                    onChange={change_handler}
                                    name='rows'/>
                         </span>
@@ -87,7 +87,7 @@ function Landing({ setting_up_grid, history }) {
                             <input className='grid_input'
                                    type='number'
                                    min='10'
-                                   max='100'
+                                   max='50'
                                    onChange={change_handler}
                                    name='cols'/>
                         </span>

@@ -1,6 +1,8 @@
 import React, {useCallback, useRef, useState} from 'react';
 import { connect } from "react-redux";
 import produce from "immer";
+import neighborhood from '../images/research/neighborhood.png';
+import game_of_life_logo from '../images/research/game_of_life.jpeg'
 
 function Dashboard({ grid_state }) {
 
@@ -75,53 +77,77 @@ console.log('this is the current state of the app from line 63 in dashboard')
 console.log(grid_state)
     return (
         <>
-        <button
-            onClick={() => {
-                setRunning(!running)
-                if (!running) {
-                    runningRef.current = true
-                    runGame()
-                }
-            }}
-        >
-            {running ? "stop" : "start"}
-        </button>
-            # TODO move to an if block for random grid or empty grid on line 20
-            <button onClick={() => {
-                const rows = [];
-                for (let i = 0; i < numRows; i++) {
-                    rows.push(Array.from(Array(numCols), () => Math.random() > .7 ? 1 : 0));
-                }
-                setGrid(rows)
-            }}>
-                random
-            </button>
-            <button onClick={() => setGrid(empty_grid)}>
-                clear
-            </button>
-            <div style={{
-                display: "grid",
-                gridTemplateColumns: `repeat(${numCols}, 20px)`
-            }}>
-                {grid.map((rows, i) =>
-                    rows.map((col, k) => (
-                        <div
-                            key={`${i} - ${k}`}
-                            onClick={() => {
-                                const newGrid = produce(grid, gridCopy => {
-                                    gridCopy[i][k] = grid[i][k] ? 0 : 1;
-                                });
-                                setGrid(newGrid)
+            <div className='dashboard_container'>
+                <div className='grid_container' style={{
+                    display: "grid",
+                    gridTemplateColumns: `repeat(${numCols}, 18px)`
+                }}>
+                    {grid.map((rows, i) =>
+                        rows.map((col, k) => (
+                            <div
+                                className='grid_cell'
+                                key={`${i} - ${k}`}
+                                onClick={() => {
+                                    const newGrid = produce(grid, gridCopy => {
+                                        gridCopy[i][k] = grid[i][k] ? 0 : 1;
+                                    });
+                                    setGrid(newGrid)
+                                }}
+                                style={{
+                                backgroundColor: grid[i][k] ? grid_state.accent_color : grid_state.bg_color,
+                                border: "solid 1px black"
                             }}
-                            style={{
-                            width: 20,
-                            height: 20,
-                            backgroundColor: grid[i][k] ? grid_state.accent_color : grid_state.bg_color,
-                            border: "solid 1px black"
-                        }}
-                        />
-                    ))
-                )}
+                            />
+                        ))
+                    )}
+                </div>
+                <div className='rules_container'>
+                    <h3 className='rules_title'>How to Play...</h3>
+                    <img src={game_of_life_logo} alt='logo' className='rules_logo_photo' />
+                    <p className='rule_one'>Any live cell with fewer than two live neighbours dies, as if by underpopulation</p>
+                    <p className='rule_two'>Any live cell with two or three live neighbours lives on to the next generation</p>
+                    <p className='rule_three'>Any live cell with more than three live neighbours dies, as if by overpopulation</p>
+                    <p className='rule_four'>Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction</p>
+                    <img className='rule_photo' src={neighborhood} alt='neighborhood' />
+                    <br/>
+                    <small className='rule_photo_text'>Cellular Neighborhood</small>
+                </div>
+            </div>
+
+            <div className='btn_container'>
+                <button
+                    className='grid_controls'
+                    onClick={() => {
+                        setRunning(!running)
+                        if (!running) {
+                            runningRef.current = true
+                            runGame()
+                        }
+                    }}
+                >
+                    {running ? <ion-icon name="close-circle-outline"></ion-icon> : <ion-icon name="caret-forward-circle-outline"></ion-icon>}
+                </button>
+                    <button
+                        className='grid_controls'
+                        onClick={() => {
+                        const rows = [];
+                        for (let i = 0; i < numRows; i++) {
+                            rows.push(Array.from(Array(numCols), () => Math.random() > .7 ? 1 : 0));
+                        }
+                        setGrid(rows)
+                    }}>
+                        <ion-icon name="help-circle-outline"></ion-icon>
+                    </button>
+                    <button
+                        className='grid_controls'
+                        onClick={() => setGrid(empty_grid)}>
+                        <ion-icon name="reload-circle-outline"></ion-icon>
+                    </button>
+                <div className='btn_labels'>
+                    <p className='btn_label_text'>Start / Stop</p>
+                    <p className='btn_label_text'>Random</p>
+                    <p className='btn_label_text'>Clear</p>
+                </div>
             </div>
         </>
     )
