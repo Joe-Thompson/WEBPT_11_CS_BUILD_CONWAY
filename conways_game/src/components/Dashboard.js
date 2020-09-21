@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import produce from "immer";
 import neighborhood from '../images/research/neighborhood.png';
 import game_of_life_logo from '../images/research/game_of_life.jpeg'
+import glider from '../components/presets/presets'
 
 function Dashboard({ grid_state }) {
 
@@ -17,6 +18,10 @@ function Dashboard({ grid_state }) {
         [-1, -1],
         [1, 0],
         [-1, 0]
+    ]
+
+    const presets_forms = [
+        glider
     ]
 
     const empty_grid = () => {
@@ -37,6 +42,9 @@ function Dashboard({ grid_state }) {
 
     const [running, setRunning] = useState(false);
     const [grid, setGrid] = useState(() => {
+        if (grid_state.option === true) {
+            return presets_forms[0]
+        }
         if (!grid_state.random_grid) {
             return empty_grid()
         } else {
@@ -95,7 +103,7 @@ console.log(grid_state)
                                 }}
                                 style={{
                                 backgroundColor: grid[i][k] ? grid_state.accent_color : grid_state.bg_color,
-                                border: "solid 1px black"
+                                border: "solid .5px black"
                             }}
                             />
                         ))
