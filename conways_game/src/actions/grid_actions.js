@@ -1,11 +1,17 @@
 export const SETTING_GRID_PROPERTIES = 'SETTING_GRID_PROPERTIES';
 export const SETTING_RANDOM_GRID = 'SETTING_RANDOM_GRID';
+export const SETTING_PRESET_GRID = 'SETTING_PRESET_GRID';
 
 export function setting_up_grid(data) {
     console.log(`this is the data in the action line 4: ${data}`)
     console.log(data)
     return dispatch => {
         try {
+            if (data.option === true) {
+                dispatch({ type: SETTING_PRESET_GRID, payload: {
+                    data
+                    }})
+            }
             if (data.random_size === 'true') {
                 data.rows = Math.floor(Math.random() * 50) + 10;
                 data.cols = Math.floor(Math.random() * 50) + 10;
