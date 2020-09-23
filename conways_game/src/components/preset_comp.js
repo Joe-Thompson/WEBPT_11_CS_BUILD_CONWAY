@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import {setting_up_grid} from "../actions/grid_actions";
 import {connect} from "react-redux";
+import glider from '../components/presets/presets';
 
 function Preset_Comp({ setting_up_grid, history }) {
 
     const [preset, setPreset] = useState({
         name: "",
-        option: false
+        option: false,
+        preset_grid_data: glider.glider
     })
 
     const change_handler = (e) => {
