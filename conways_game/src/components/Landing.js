@@ -92,7 +92,7 @@ function Landing({ setting_up_grid, history }) {
                                    name='cols'/>
                         </span>
                     </div>
-                    <p className='size_range'>choose your grid size (10 - 100)</p>
+                    <p className='size_range'>choose your grid size (10 - 50)</p>
                     <a className='btn_links' href='#second_option'>continue</a>
                     <p className='size_range'>or choose random</p>
                     <input onChange={change_handler}

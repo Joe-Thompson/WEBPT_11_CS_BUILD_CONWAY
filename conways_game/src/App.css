@@ -21,8 +21,9 @@ html {
 }
 
 .title_photo {
-  width: 100rem;
+  width: auto;
   height: 45rem;
+  margin-bottom: -5rem;
 }
 
 .play_btn {
@@ -47,7 +48,7 @@ html {
 
 .nav_link {
   align-self: center;
-  margin: 2rem 10rem;
+  margin: 2rem 5rem;
   color: white;
 }
 
@@ -299,7 +300,7 @@ ion-icon {
   display: flex;
   align-content: center;
   justify-self: center;
-  padding: 1rem 1rem;
+  padding: 1rem;
 }
 
 .grid_cell {

@@ -7,8 +7,9 @@ import glider from '../components/presets/presets'
 
 function Dashboard({ grid_state }) {
 
-    const numRows = Number(grid_state.rows);
-    const numCols = Number(grid_state.cols);
+    const numRows = grid_state.rows
+    const numCols = grid_state.cols
+
     const ops = [
         [0, 1],
         [0, -1],
@@ -20,15 +21,13 @@ function Dashboard({ grid_state }) {
         [-1, 0]
     ]
 
-    const presets_forms = [
-        glider
-    ]
 
     const empty_grid = () => {
         const rows = [];
         for (let i = 0; i < numRows; i++) {
             rows.push(Array.from(Array(numCols), () => 0));
         }
+        console.log(rows)
         return rows
     }
 
@@ -40,10 +39,18 @@ function Dashboard({ grid_state }) {
                 return rows
     }
 
+    const preset_grid = () => {
+        const rows = [];
+        glider.glider.map(arr => {
+            rows.push(arr)
+        })
+        return rows
+    }
+
     const [running, setRunning] = useState(false);
     const [grid, setGrid] = useState(() => {
-        if (grid_state.option === true) {
-            return presets_forms[0]
+        if (grid_state.preset_grid === true) {
+            return preset_grid()
         }
         if (!grid_state.random_grid) {
             return empty_grid()
@@ -61,6 +68,8 @@ function Dashboard({ grid_state }) {
         }
         setGrid(current_grid => {
             return produce(current_grid, gridCopy => {
+                console.log('this is line 78 in dashboard')
+                console.log(current_grid)
                 for (let i = 0; i < numRows; i++) {
                     for (let k = 0; k < numCols; k++) {
                         let neighbors = 0;
@@ -79,7 +88,7 @@ function Dashboard({ grid_state }) {
                 }}
             })
         })
-        setTimeout(runGame, 100)
+        setTimeout(runGame, 300)
     },[])
 console.log('this is the current state of the app from line 63 in dashboard')
 console.log(grid_state)
