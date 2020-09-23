@@ -6,9 +6,9 @@ import game_of_life_logo from '../images/research/game_of_life.jpeg'
 import glider from '../components/presets/presets'
 
 function Dashboard({ grid_state }) {
-
-    const numRows = grid_state.rows
-    const numCols = grid_state.cols
+console.log(grid_state)
+    let numRows = Number(grid_state.rows)
+    let numCols = Number(grid_state.cols)
 
     const ops = [
         [0, 1],
@@ -40,17 +40,13 @@ function Dashboard({ grid_state }) {
     }
 
     const preset_grid = () => {
-        const rows = [];
-        glider.glider.map(arr => {
-            rows.push(arr)
-        })
-        return rows
+
     }
 
     const [running, setRunning] = useState(false);
     const [grid, setGrid] = useState(() => {
         if (grid_state.preset_grid === true) {
-            return preset_grid()
+            return grid_state.preset_grid_data
         }
         if (!grid_state.random_grid) {
             return empty_grid()
