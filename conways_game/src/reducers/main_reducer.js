@@ -38,8 +38,12 @@ export function Main_Reducer(state = initial_state, action) {
         case SETTING_PRESET_GRID:
             return {
                 ...state,
-                preset_grid: action.payload.data.option,
-                preset_name: action.payload.data.name
+                preset_grid: action.payload.preset_data.option,
+                preset_name: action.payload.preset_data.name,
+                bg_color: action.payload.preset_data.bg_color,
+                accent_color: action.payload.preset_data.accent_color,
+                rows: action.payload.preset_data.rows,
+                cols: action.payload.preset_data.cols
             }
         default:
             return state
