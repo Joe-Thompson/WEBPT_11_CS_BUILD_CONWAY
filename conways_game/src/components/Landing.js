@@ -138,7 +138,7 @@ function Landing({ setting_up_grid, history }) {
                         })}
                     </div>
                     <p className='color_title'>Choose an accent color for your grid (alive cells)</p>
-                    <button type='submit' className='btn_links'><a href='#third_option'>"."</a>Create your Grid</button>
+                    <button type='submit' className='btn_links'><a href='#third_option'>Create your Grid</a></button>
                 </section>
             </form>
         </>

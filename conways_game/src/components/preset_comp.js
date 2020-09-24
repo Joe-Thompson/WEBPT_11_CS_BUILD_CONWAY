@@ -3,6 +3,8 @@ import {setting_up_grid} from "../actions/grid_actions";
 import {connect} from "react-redux";
 import gosper from '../images/preset_photos/gosper.png';
 import diagonal from '../images/preset_photos/diagonal.png';
+import norman from '../images/preset_photos/norman.png';
+import chess from '../images/preset_photos/chess.png';
 function Preset_Comp({ setting_up_grid, history }) {
 
     const [preset, setPreset] = useState({
@@ -30,8 +32,14 @@ function Preset_Comp({ setting_up_grid, history }) {
                 <label htmlFor='name'>Gospers Glider Gun</label>
                 <input onClick={change_handler} type='radio' name='name' value='glider'/>
                 <img src={diagonal} alt='diagonal' />
-                <label htmlFor='name'>Diagonal Fun</label>
+                <label htmlFor='name'>Every Other</label>
                 <input onClick={change_handler} type='radio' name='name' value='diagonal'/>
+                <img src={norman} alt='norman' />
+                <label htmlFor='name'>Meet Norman</label>
+                <input onClick={change_handler} type='radio' name='name' value='norman'/>
+                <img src={chess} alt='chess' />
+                <label htmlFor='name'>This is chess, not checkers</label>
+                <input onClick={change_handler} type='radio' name='name' value='chess'/>
             <button type='submit'>Create grid</button>
             </form>
         </div>
