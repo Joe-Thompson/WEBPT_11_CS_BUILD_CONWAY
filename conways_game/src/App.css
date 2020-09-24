@@ -890,24 +890,36 @@ ion-icon {
 
 .preset_container {
   display: flex;
-  padding: 5rem;
+  flex-direction: column;
+  align-items: center;
+  padding: 5rem 2rem;
   margin: 0 auto;
 }
 
 .preset_form {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  margin: 2rem 20rem;
+  padding: 3rem
+}
+
+.preset_option {
+  display: flex;
+  flex-direction: column;
+}
+
+.preset_option label {
+  font-size: 1.2rem;
+  margin: 0 auto;
 }
 
 .preset_form img {
-  width: 25rem;
-  margin: 1rem 0;
+  width: 20rem;
+  margin: 1rem auto;
 }
 
 .preset_form input {
-  align-self: flex-start;
-  margin: .5rem 0;
+  margin: 1rem;
 }
 
 .preset_form button {
