@@ -57,7 +57,7 @@ function Landing({ setting_up_grid, history }) {
                         </span>
                         <span className='grid_or'>or</span>
                         <span className='grid_random'>
-                            <p className='size_range'>Start by choosing an empty grid, or a random initial state</p>
+                            <p className='size_range'>Choose between an empty grid, or a random pattern</p>
                             <input className='grid_input'
                                    type='radio'
                                    onChange={change_handler}
@@ -66,11 +66,11 @@ function Landing({ setting_up_grid, history }) {
                             <label className='grid_label' htmlFor='cols'>Random Grid</label>
                         </span>
                     </div>
-                    <p className='size_range'>continue on to choose your number of rows and columns</p>
+                    <p className='size_range'>Next choose size of grid</p>
                     <a className='btn_links' href='#first_option'>continue</a>
                 </section>
                 <section className='choices grid_size_bg' id='first_option'>
-                    <p className='size_range size_title'>Choose your grid dimensions, or allow us to build it for you</p>
+                    <p className='size_range size_title'>Choose your grid size, or allow us to build it for you</p>
                     <div className='grid_section'>
                         <span className='grid_row'>
                             <label className='grid_label' htmlFor='rows'>Number of Rows</label>
@@ -93,14 +93,15 @@ function Landing({ setting_up_grid, history }) {
                         </span>
                     </div>
                     <p className='size_range'>choose your grid size (10 - 50)</p>
-                    <a className='btn_links' href='#second_option'>continue</a>
-                    <p className='size_range'>or choose random</p>
+                    <p className='size_range size_or'>or</p>
+                    <p className='size_range '>choose random</p>
                     <input onChange={change_handler}
-                            type='radio'
-                            name='random_size'
-                            value={true}
-                            className='btn_links'
-                            />
+                           type='radio'
+                           name='random_size'
+                           value={true}
+                           className='btn_links size_btn'
+                    />
+                    <a className='btn_links' href='#second_option'>continue</a>
                 </section>
 
                 <section className='choices grid_color_bg'>
