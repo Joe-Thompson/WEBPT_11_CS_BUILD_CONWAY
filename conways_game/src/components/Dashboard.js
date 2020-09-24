@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import produce from "immer";
 import neighborhood from '../images/research/neighborhood.png';
 import game_of_life_logo from '../images/research/game_of_life.jpeg'
-import glider from '../components/presets/presets'
 
 function Dashboard({ grid_state }) {
 console.log(grid_state)
@@ -37,10 +36,6 @@ console.log(grid_state)
                 rows.push(Array.from(Array(numCols), () => Math.random() > .7 ? 1 : 0));
             }
         return rows
-    }
-
-    const preset_grid = () => {
-
     }
 
     const [running, setRunning] = useState(false);
@@ -85,7 +80,7 @@ console.log(grid_state)
             })
         })
         setTimeout(runGame, 300)
-    },[])
+    },[numCols, numRows, ops])
 console.log('this is the current state of the app from line 63 in dashboard')
 console.log(grid_state)
     return (
@@ -138,7 +133,7 @@ console.log(grid_state)
                         }
                     }}
                 >
-                    {running ? <ion-icon name="close-circle-outline"></ion-icon> : <ion-icon name="caret-forward-circle-outline"></ion-icon>}
+                    {running ? <ion-icon name="close-circle-outline">"."</ion-icon> : <ion-icon name="caret-forward-circle-outline">"."</ion-icon>}
                 </button>
                     <button
                         className='grid_controls'
@@ -149,12 +144,12 @@ console.log(grid_state)
                         }
                         setGrid(rows)
                     }}>
-                        <ion-icon name="help-circle-outline"></ion-icon>
+                        <ion-icon name="help-circle-outline">"."</ion-icon>
                     </button>
                     <button
                         className='grid_controls'
                         onClick={() => setGrid(empty_grid)}>
-                        <ion-icon name="reload-circle-outline"></ion-icon>
+                        <ion-icon name="reload-circle-outline">"."</ion-icon>
                     </button>
                 <div className='btn_labels'>
                     <p className='btn_label_text'>Start / Stop</p>
