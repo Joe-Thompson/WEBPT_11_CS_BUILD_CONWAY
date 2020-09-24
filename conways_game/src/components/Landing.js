@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { setting_up_grid } from '../actions/grid_actions';
 
 
-function Landing({ setting_up_grid, history }) {
+function Landing({ setting_up_grid, history, location }) {
 
     const [grid_data, setGrid_data] = useState({
          rows: 0,
@@ -11,7 +11,8 @@ function Landing({ setting_up_grid, history }) {
          bg_color: 'black',
          accent_color: 'white',
          preset_grid: false,
-        random_grid: false
+        random_grid: false,
+        window_size: window.screen.width
     });
 
     const change_handler = (e) => {
@@ -22,7 +23,7 @@ function Landing({ setting_up_grid, history }) {
 
     };
 
-
+console.log(window.screen.width)
     const submit_handler = (e) => {
         console.log('this is the data in the submit handler')
         console.log(grid_data)
