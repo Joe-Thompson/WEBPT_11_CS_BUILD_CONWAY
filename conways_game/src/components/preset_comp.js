@@ -10,6 +10,7 @@ function Preset_Comp({ setting_up_grid, history }) {
     const [preset, setPreset] = useState({
         name: "",
         option: false,
+        window_size: window.screen.width
     })
 
     const change_handler = (e) => {
