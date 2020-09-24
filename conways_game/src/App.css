@@ -100,6 +100,7 @@ html {
 
 .nav_links {
   display: flex;
+  justify-content: space-between;
 }
 
 @media only screen and (max-width: 1100px) {
@@ -124,6 +125,7 @@ html {
   align-self: center;
   margin: 2rem;
   color: white;
+  width: 18rem;
 }
 
 @media only screen and (max-width: 1100px) {
@@ -705,6 +707,22 @@ ion-icon {
   align-self: flex-start;
 }
 
+.border_pink {
+  border-bottom: 1px solid #D7609A;
+}
+
+.border_blue {
+  border-bottom: 1px solid #4DBCF3;
+}
+
+.border_green {
+  border-bottom: 1px solid #7BBB5D;
+}
+
+.border_yellow {
+  border-bottom: 1px solid #F8CD43;
+}
+
 .rules_logo_photo {
   width: 20rem;
   height: 10rem;
@@ -736,6 +754,20 @@ ion-icon {
   margin-left: 15rem;
 }
 
+@media only screen and (max-width: 1100px) {
+  .about_bio {
+    margin-left: 4rem;
+    width: 85%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .about_bio {
+    margin-left: 1.5rem;
+    width: 85%;
+  }
+}
+
 .about_name_title {
   font-size: 2.3rem;
   margin-bottom: -1rem;
@@ -749,21 +781,58 @@ ion-icon {
 .still_lifes {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
   padding: 4.8rem;
   margin: 1rem 4rem;
+}
+
+@media only screen and (max-width: 800px) {
+  .still_lifes {
+    padding: 1rem;
+    margin: 1rem 1rem;
+  }
 }
 
 .still_lifes img{
   width: 8rem;
   height: 8rem;
-  margin: 1rem 6rem;
+  margin: 1rem;
 }
 
 .still_lifes p{
   width: 45%;
-  margin: 1rem 2.8rem;
+  margin: 1rem 1rem;
   align-self: flex-end;
+  padding: 0 1rem .5rem 1rem;
   border-bottom: 1px solid black;
+}
+
+.about_life_box {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+@media only screen and (max-width: 800px) {
+  .about_life_box {
+    width: 650px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .about_life_box {
+    width: 400px;
+  }
+
+  .about_life_box img {
+    margin: 1rem .5rem 2rem .5rem;
+  }
+
+  .about_life_box p {
+    width: 300px;
+    padding: 0;
+    margin: 0;
+  }
 }
 
 .still_lifes h2 {
@@ -771,12 +840,25 @@ ion-icon {
   width: 5rem;
 }
 
+@media only screen and (max-width: 1100px) {
+  .still_lifes p {
+    width: 65%;
+  }
+}
+
 .life_form_section_header {
   font-size: 2rem;
+  color: #4DBCF3;
   border-bottom: 1px solid black;
-  width: 20%;
+  width: 18rem;
   display: flex;
   justify-content: center;
+}
+
+@media only screen and (max-width: 800px) {
+  .life_form_section_header {
+    width: 100%;
+  }
 }
 
 .life_form_header{
@@ -797,6 +879,13 @@ ion-icon {
   width: 49%;
   font-size: 1rem;
   line-height: 1.5;
+}
+
+@media only screen and (max-width: 1100px) {
+  .glider_gun p{
+    width: 850px;
+    margin-top: 1.5rem;
+  }
 }
 
 .preset_container {
