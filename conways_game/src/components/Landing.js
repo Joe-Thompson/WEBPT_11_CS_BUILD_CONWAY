@@ -47,6 +47,7 @@ console.log(window.screen.width)
         <>
             <form onSubmit={submit_handler}>
                 <section className='choices grid_choice_bg' id='start'>
+                    <p className='size_range'>Start with an empty grid, or a random pattern</p>
                     <div className='grid_empty'>
                         <span className='grid_random'>
                             <label className='grid_label' htmlFor='rows'>Empty Grid</label>
@@ -58,7 +59,6 @@ console.log(window.screen.width)
                         </span>
                         <span className='grid_or'>or</span>
                         <span className='grid_random'>
-                            <p className='size_range'>Choose between an empty grid, or a random pattern</p>
                             <input className='grid_input'
                                    type='radio'
                                    onChange={change_handler}

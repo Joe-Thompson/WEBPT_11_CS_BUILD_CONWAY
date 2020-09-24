@@ -10,6 +10,11 @@ function Nav() {
                 <Link to='/presets' className='nav_link'>Presets</Link>
                 <Link to='/dashboard' className='nav_link'>Game</Link>
             </ul>
+            <ul className='ham_menu'>
+                <div className='ham_div'></div>
+                <div className='ham_div'></div>
+                <div className='ham_div'></div>
+            </ul>
 
         </div>
     )
