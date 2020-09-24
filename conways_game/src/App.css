@@ -616,6 +616,12 @@ a {
   flex-wrap: wrap;
 }
 
+@media only screen and (max-width: 800px) {
+  .btn_container {
+    justify-content: space-evenly;
+  }
+}
+
 .btn_labels {
   margin: 0 30rem;
   display: flex;
@@ -627,6 +633,18 @@ a {
   width: 10rem;
   display: flex;
   justify-content: center;
+}
+
+@media only screen and (max-width: 800px) {
+  .btn_label_text {
+    width: 8.5rem;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .btn_label_text {
+    width: 4.6rem;
+  }
 }
 
 ion-icon {
@@ -645,6 +663,18 @@ ion-icon {
   justify-content: center;
 }
 
+@media only screen and (max-width: 800px) {
+  .grid_controls {
+    margin: 2rem 2rem 0 2rem;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .grid_controls {
+    margin: 2rem 1rem 0 1rem;
+  }
+}
+
 .grid_container {
   display: flex;
   align-content: center;
@@ -652,10 +682,25 @@ ion-icon {
   padding: 1rem;
 }
 
+@media only screen and (max-width: 800px) {
+  .grid_container {
+    justify-content: center;
+  }
+}
+
 .grid_cell {
   border-radius: .9rem;
   width: .9rem;
   height: .9rem;
+}
+
+@media only screen and (max-width: 800px) {
+  .grid_cell {
+    border-radius: 1rem;
+    width: 15px;
+    height: 10px;
+
+  }
 }
 
 .dashboard_container {
@@ -666,12 +711,24 @@ ion-icon {
   padding-top: 1rem;
 }
 
+@media only screen and (max-width: 800px) {
+  .dashboard_container {
+    flex-direction: column-reverse;
+  }
+}
+
 .rules_container {
   display: flex;
   flex-direction: column;
   align-items: center;
   align-self: end;
   font-size: 1.2rem;
+}
+
+@media only screen and (max-width: 800px) {
+  .rules_container {
+    margin: 0 auto;
+  }
 }
 
 .rules_container p {

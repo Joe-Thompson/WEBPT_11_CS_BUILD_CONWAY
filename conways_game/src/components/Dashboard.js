@@ -167,7 +167,7 @@ console.log(grid_state)
                     </button>
                 <div className='btn_labels'>
                     <p className='btn_label_text'>Start / Stop</p>
-                    <p className='btn_label_text'>Restart Preset</p>
+                    <p className='btn_label_text'>Restart</p>
                     <p className='btn_label_text'>Random</p>
                     <p className='btn_label_text'>Clear</p>
                 </div>

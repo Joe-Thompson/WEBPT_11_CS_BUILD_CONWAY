@@ -40,9 +40,17 @@ export function setting_up_grid(data) {
                 return
             }
             if (data.random_size === 'true') {
+                if (data.window_size <= 500) {
+                    data.rows = Math.floor(Math.random() * 15) + 10;
+                    data.cols = Math.floor(Math.random() * 15) + 10;
+                }
+                else if (data.window_size <= 800) {
+                    data.rows = Math.floor(Math.random() * 30) + 10;
+                    data.cols = Math.floor(Math.random() * 30) + 10;
+                } else {
                 data.rows = Math.floor(Math.random() * 50) + 10;
                 data.cols = Math.floor(Math.random() * 50) + 10;
-            }
+            }}
             if (data.random_grid === 'true') {
                 dispatch({ type: SETTING_RANDOM_GRID, payload: {
                     data
@@ -53,6 +61,12 @@ export function setting_up_grid(data) {
             }
             if (data.cols < 10) {
                 data.cols = 10
+            }
+            if (data.window_size <= 500 && data.cols > 26) {
+                data.cols = 25
+            }
+            if (data.window_size <= 800 && data.cols > 40) {
+                data.cols = 40
             }
             console.log('past second dispatch')
             dispatch({ type: SETTING_GRID_PROPERTIES, payload: {
