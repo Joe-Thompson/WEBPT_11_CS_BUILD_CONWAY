@@ -26,7 +26,11 @@ export function Main_Reducer(state = initial_state, action) {
                 rows: action.payload.data.rows,
                 cols: action.payload.data.cols,
                 bg_color: action.payload.data.bg_color,
-                accent_color: action.payload.data.accent_color
+                accent_color: action.payload.data.accent_color,
+                random_grid: false,
+                random_size: false,
+                preset_grid: false,
+                preset_grid_data: null,
             };
         case SETTING_RANDOM_GRID:
             return {
@@ -35,7 +39,10 @@ export function Main_Reducer(state = initial_state, action) {
                 cols: action.payload.data.cols,
                 bg_color: action.payload.data.bg_color,
                 accent_color: action.payload.data.accent_color,
-                random_grid: true
+                random_grid: true,
+                random_size: true,
+                preset_grid: false,
+                preset_grid_data: null
             }
         case SETTING_PRESET_GRID:
             return {
@@ -46,7 +53,9 @@ export function Main_Reducer(state = initial_state, action) {
                 accent_color: action.payload.data_grid.accent_color,
                 rows: action.payload.data_grid.preset_grid_data.length,
                 cols: action.payload.data_grid.preset_grid_data[0].length,
-                preset_grid_data: action.payload.data_grid.preset_grid_data
+                preset_grid_data: action.payload.data_grid.preset_grid_data,
+                random_grid: false,
+                random_size: false,
             }
         default:
             return state
