@@ -50,7 +50,7 @@ function Preset_Comp({ setting_up_grid, history }) {
                     <label htmlFor='name'>This is chess, not checkers</label>
                     <input onClick={change_handler} type='radio' name='name' value='chess'/>
                 </div>
-                <button className='btn_links' type='submit'>Create grid</button>
+                <button className='btn_links preset_btn' type='submit'>Create grid</button>
             </form>
         </div>
     )
