@@ -452,4 +452,30 @@ ion-icon {
   line-height: 1.5;
 }
 
+.preset_container {
+  display: flex;
+  padding: 5rem;
+  margin: 0 auto;
+}
+
+.preset_form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.preset_form img {
+  width: 25rem;
+  margin: 1rem 0;
+}
+
+.preset_form input {
+  align-self: flex-start;
+  margin: .5rem 0;
+}
+
+.preset_form button {
+  margin: 1rem 0;
+}
+
 
