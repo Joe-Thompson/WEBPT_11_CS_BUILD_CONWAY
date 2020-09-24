@@ -80,7 +80,7 @@ console.log(grid_state)
             })
         })
         setTimeout(runGame, 300)
-    },[])
+    },[numCols, numRows, ops])
 console.log('this is the current state of the app from line 63 in dashboard')
 console.log(grid_state)
     return (
@@ -133,7 +133,7 @@ console.log(grid_state)
                         }
                     }}
                 >
-                    {running ? <ion-icon name="close-circle-outline"></ion-icon> : <ion-icon name="caret-forward-circle-outline"></ion-icon>}
+                    {running ? <ion-icon name="close-circle-outline">"."</ion-icon> : <ion-icon name="caret-forward-circle-outline">"."</ion-icon>}
                 </button>
                     <button
                         className='grid_controls'
@@ -144,12 +144,12 @@ console.log(grid_state)
                         }
                         setGrid(rows)
                     }}>
-                        <ion-icon name="help-circle-outline"></ion-icon>
+                        <ion-icon name="help-circle-outline">"."</ion-icon>
                     </button>
                     <button
                         className='grid_controls'
                         onClick={() => setGrid(empty_grid)}>
-                        <ion-icon name="reload-circle-outline"></ion-icon>
+                        <ion-icon name="reload-circle-outline">"."</ion-icon>
                     </button>
                 <div className='btn_labels'>
                     <p className='btn_label_text'>Start / Stop</p>
