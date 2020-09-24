@@ -1,6 +1,8 @@
 import glider from '../components/presets/presets';
+import mini_glider from '../components/presets/presets';
 import diagonal from "../components/presets/presets";
 import norman from '../components/presets/presets';
+import mini_norman from '../components/presets/presets';
 import chess from '../components/presets/presets';
 export const SETTING_GRID_PROPERTIES = 'SETTING_GRID_PROPERTIES';
 export const SETTING_RANDOM_GRID = 'SETTING_RANDOM_GRID';
@@ -14,14 +16,20 @@ export function setting_up_grid(data) {
             let grid_data_preset
             if (data.option) {
                 if (data.name === "glider") {
+                    if (data.window_size < 501) {
+                        grid_data_preset = mini_glider.mini_glider
+                    } else {
                     grid_data_preset = glider.glider
-                }
+                }}
                 if (data.name === "diagonal") {
                     grid_data_preset = diagonal.diagonal
                 }
                 if (data.name === "norman") {
+                    if (data.window_size < 501) {
+                        grid_data_preset = mini_norman.mini_norman
+                    } else {
                     grid_data_preset = norman.norman
-                }
+                }}
                 if (data.name === 'chess') {
                     grid_data_preset = chess.chess
                 }
