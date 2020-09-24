@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import produce from "immer";
 import neighborhood from '../images/research/neighborhood.png';
 import game_of_life_logo from '../images/research/game_of_life.jpeg'
-import glider from '../components/presets/presets'
 
 function Dashboard({ grid_state }) {
 console.log(grid_state)
@@ -37,10 +36,6 @@ console.log(grid_state)
                 rows.push(Array.from(Array(numCols), () => Math.random() > .7 ? 1 : 0));
             }
         return rows
-    }
-
-    const preset_grid = () => {
-
     }
 
     const [running, setRunning] = useState(false);

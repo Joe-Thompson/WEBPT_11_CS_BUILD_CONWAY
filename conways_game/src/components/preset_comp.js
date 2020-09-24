@@ -1,13 +1,8 @@
 import React, { useState } from 'react';
 import {setting_up_grid} from "../actions/grid_actions";
 import {connect} from "react-redux";
-import glider from '../components/presets/presets';
-import diagonal from '../components/presets/presets'
 
 function Preset_Comp({ setting_up_grid, history }) {
-    console.log(diagonal.diagonal)
-    const glider_grid = glider.glider
-    const diagonal_grid = diagonal.diagonal
 
     const [preset, setPreset] = useState({
         name: "",
@@ -21,23 +16,6 @@ function Preset_Comp({ setting_up_grid, history }) {
             option: true
         })
     }
-
-    function handle_grid_data() {
-        console.log('hello from handle function')
-            console.log(preset.name)
-        if (preset.name === "glider") {
-            setPreset({
-                ...preset,
-                preset_grid_data: glider
-            })
-        }
-        if (preset.name === "diagonal") {
-            setPreset({
-                ...preset,
-                preset_grid_data: diagonal
-            })
-            return preset
-        }}
 
     const submit_handler = (e) => {
         e.preventDefault();
