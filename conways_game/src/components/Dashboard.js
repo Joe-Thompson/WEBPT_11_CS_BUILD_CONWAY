@@ -9,6 +9,7 @@ console.log(grid_state)
     let numRows = Number(grid_state.rows)
     let numCols = Number(grid_state.cols)
 
+
     const ops = [
         [0, 1],
         [0, -1],
@@ -49,6 +50,14 @@ console.log(grid_state)
             return random_grid()
         }
     })
+
+    const handle_preset_reload = () => {
+        if (!grid_state.preset_grid_data) {
+            return setGrid(empty_grid);
+        } else {
+            return setGrid(grid_state.preset_grid_data);
+        }
+    }
 
     const runningRef = useRef(running);
     runningRef.current = running;
@@ -135,6 +144,11 @@ console.log(grid_state)
                 >
                     {running ? <ion-icon name="close-circle-outline">"."</ion-icon> : <ion-icon name="caret-forward-circle-outline">"."</ion-icon>}
                 </button>
+                <button
+                    className='grid_controls'
+                    onClick={handle_preset_reload}>
+                    <ion-icon name="reload-circle-outline">"."</ion-icon>
+                </button>
                     <button
                         className='grid_controls'
                         onClick={() => {
@@ -149,10 +163,11 @@ console.log(grid_state)
                     <button
                         className='grid_controls'
                         onClick={() => setGrid(empty_grid)}>
-                        <ion-icon name="reload-circle-outline">"."</ion-icon>
+                        <ion-icon name="close-outline">"."</ion-icon>
                     </button>
                 <div className='btn_labels'>
                     <p className='btn_label_text'>Start / Stop</p>
+                    <p className='btn_label_text'>Restart Preset</p>
                     <p className='btn_label_text'>Random</p>
                     <p className='btn_label_text'>Clear</p>
                 </div>
