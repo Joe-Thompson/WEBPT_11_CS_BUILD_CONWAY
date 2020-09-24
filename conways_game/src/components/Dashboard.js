@@ -33,10 +33,10 @@ console.log(grid_state)
 
     const random_grid = () => {
         const rows = [];
-                for (let i = 0; i < numRows; i++) {
-                    rows.push(Array.from(Array(numCols), () => Math.random() > .7 ? 1 : 0));
-                }
-                return rows
+            for (let i = 0; i < numRows; i++) {
+                rows.push(Array.from(Array(numCols), () => Math.random() > .7 ? 1 : 0));
+            }
+        return rows
     }
 
     const preset_grid = () => {
