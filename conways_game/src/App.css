@@ -14,16 +14,55 @@ html {
   -webkit-box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.3);
 }
 
+@media only screen and (max-width: 500px) {
+  .App {
+    width: 400px;
+  }
+}
+
 .title_container {
   display: flex;
   justify-content: center;
   flex-direction: column;
 }
 
+@media only screen and (max-width: 500px) {
+  .title_container {
+    width: 400px;
+  }
+}
+
 .title_photo {
   width: auto;
   height: 45rem;
   margin-bottom: -5rem;
+}
+
+@media only screen and (max-width: 1100px) {
+  .title_photo {
+    width: 800px;
+    height: 550px;
+    margin: 2rem auto 0 auto;
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .title_photo {
+    width: 600px;
+    height: 450px;
+    margin: 5rem auto 2rem auto;
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .title_photo {
+    width: 400px;
+    height: 350px;
+    margin: 8rem auto 2rem auto;
+    padding: 0;
+  }
 }
 
 .play_btn {
@@ -34,27 +73,93 @@ html {
   display: flex;
   height: 3rem;
   background-color: #4DBCF3;
-  align-content: space-between;
-  justify-content: center;
+  align-content: space-around;
   border-radius: .5rem;
   margin-top: -1rem;
   font-size: 1.5rem;
+  justify-content: center;
+  padding-left: 6rem;
+}
+
+@media only screen and (max-width: 800px) {
+  .nav_container {
+    align-self: center;
+    font-size: 1.3rem;
+    padding-left: .5rem;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .nav_container {
+    align-self: center;
+    width: 400px;
+    font-size: 1rem;
+    margin-left: -.3rem;
+  }
 }
 
 .nav_links {
   display: flex;
-  justify-content: space-between;
+}
+
+@media only screen and (max-width: 1100px) {
+  .nav_links {
+    width: auto;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .nav_links {
+    width: auto;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .nav_links {
+    width: 400px;
+  }
 }
 
 .nav_link {
   align-self: center;
-  margin: 2rem 5rem;
+  margin: 2rem;
   color: white;
+}
+
+@media only screen and (max-width: 1100px) {
+  .nav_link {
+    margin: 1rem auto;
+    width: 200px;
+    padding-left: 1rem;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .nav_link {
+    margin: 2rem;
+    width: 100px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .nav_link {
+    font-size: 1rem;
+    width: 60px;
+    margin-left: -.1rem;
+    justify-content: space-between;
+  }
 }
 
 .grid_or {
   font-size: 5rem;
   margin: 1.5rem auto;
+}
+
+@media only screen and (max-width: 800px) {
+  .grid_or {
+    font-size: 3rem;
+    margin: 1rem auto;
+  }
 }
 
 .grid_empty {
@@ -77,6 +182,14 @@ html {
   color: white;
 }
 
+@media only screen and (max-width: 1100px) {
+  .grid_size_bg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
 .grid_color_bg {
   background-color: #D7609A;
   padding-bottom: 2rem;
@@ -91,11 +204,21 @@ html {
   color: white;
 }
 
+@media only screen and (max-width: 800px) {
+  .grid_choice_bg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
 .grid_random {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
+
 
 .size_range {
   display: flex;
@@ -103,10 +226,40 @@ html {
   font-size: 1.5rem;
 }
 
+@media only screen and (max-width: 800px) {
+  .size_range {
+    font-size: 1.3rem;
+    margin: 1.8rem auto;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .size_range {
+    font-size: 1.1rem;
+    padding: .7rem 2rem;
+    margin: 0 auto;
+  }
+}
+
 .grid_section {
   display: flex;
   flex-direction: row;
   margin: 0 auto;
+}
+
+@media only screen and (max-width: 1100px) {
+  .grid_section {
+    display: flex;
+    align-items: center;
+    margin-left: -5rem;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .grid_section {
+    flex-direction: column;
+    margin: 0 auto;
+  }
 }
 
 .grid_row {
@@ -117,12 +270,56 @@ html {
   width: 50%;
 }
 
+@media only screen and (max-width: 1100px) {
+  .grid_row {
+    width: 400px;
+    margin: 1rem;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .grid_row {
+    width: 300px;
+    margin: 1rem;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .grid_row {
+    width: 200px;
+    margin: 1rem;
+    padding: 1rem;
+  }
+}
+
 .grid_col {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 50%;
+}
+
+@media only screen and (max-width: 1100px) {
+  .grid_col {
+    width: 400px;
+    margin: 1rem;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .grid_col {
+    width: 300px;
+    margin: 1rem;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .grid_col {
+    width: 200px;
+    margin: 1rem;
+    padding: 1rem;
+  }
 }
 
 .grid_x {
@@ -132,12 +329,50 @@ html {
   margin-left: -4rem;
 }
 
-.size_title {
+@media only screen and (max-width: 1100px) {
+  .grid_x {
+    font-size: 3rem;
+  }
+}
 
+@media only screen and (max-width: 800px) {
+  .grid_x {
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .grid_x {
+    margin: -2rem 1rem;
+  }
+}
+
+.size_title {
+  display: flex;
+  align-items: center;
+}
+
+@media only screen and (max-width: 500px) {
+  .size_title {
+    margin-bottom: 0;
+  }
 }
 
 .grid_label {
   font-size: 3rem;
+}
+
+@media only screen and (max-width: 1100px) {
+    .grid_label {
+      font-size: 2rem;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+  .grid_label {
+    font-size: 1.5rem;
+    padding: 1rem 0;
+  }
 }
 
 .grid_input {
@@ -145,6 +380,20 @@ html {
   width: 10rem;
   border-radius: 1rem;
   margin-top: 2rem;
+}
+
+@media only screen and (max-width: 1100px) {
+  .grid_input {
+    margin: 1rem 4rem;
+  }
+}
+
+.size_or {
+  margin: -1rem;
+}
+
+.size_btn {
+  margin: -2rem;
 }
 
 .landing_btn {
@@ -157,6 +406,28 @@ html {
 .choices {
   margin: 30rem auto 10rem auto;
   padding: 18rem;
+}
+
+@media  only screen and (max-width: 1100px){
+  .choices {
+    margin: 10rem auto 5rem auto;
+    padding: 10rem;
+  }
+}
+
+@media  only screen and (max-width: 800px){
+  .choices {
+    margin: 11rem auto 8rem auto;
+    padding: 8rem 6.5rem 14rem 6.5rem;
+  }
+}
+
+@media  only screen and (max-width: 500px){
+  .choices {
+    margin: 8rem 0;
+    padding: 7rem 0 13rem 0;
+    width: 405px;
+  }
 }
 
 .color_section {
@@ -174,20 +445,63 @@ html {
   margin: 2rem auto;
 }
 
+@media only screen and (max-width: 1100px) {
+  .color_choice {
+    margin: .5rem;
+  }
+}
+
 .box {
   display: flex;
   width: 10rem;
   height: 10rem;
   margin: 1rem 3rem;
   color: white;
-  border: 1px solid white;
+  border: 3px solid white;
   justify-content: center;
   justify-self: center;
   border-radius: 1rem;
 }
 
+@media only screen and (max-width: 1100px) {
+  .box {
+    width: 10rem;
+    height: 5rem;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .box {
+    width: 5rem;
+    height: 4rem;
+    padding: 1rem;
+    margin: 1rem;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .box {
+    width: 3rem;
+    height: 1rem;
+    padding: 1.5rem;
+    margin: 2rem 1rem;
+  }
+}
+
 .radio_btn {
   margin: 1rem 0 0 7.8rem;
+}
+
+@media only screen and (max-width: 800px) {
+  .radio_btn {
+    margin: 1rem 0 0 4.3rem;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .radio_btn {
+    margin: .5rem 0 0 4rem;
+  }
 }
 
 .black {
@@ -245,6 +559,25 @@ html {
   justify-content: center;
 }
 
+@media only screen and (max-width: 1100px) {
+  .color_title {
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .color_title {
+    font-size: 1.5rem;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .color_title {
+    font-size: 1rem;
+  }
+}
+
 .btn_links {
   display: flex;
   background-color: #4DBCF3;
@@ -255,6 +588,19 @@ html {
   margin: 2rem auto;
   height: 3rem;
   align-items: center;
+}
+
+@media only screen and (max-width: 800px) {
+  .btn_links {
+    width: 22rem;
+  }
+}
+
+@media  only screen and (max-width: 500px){
+  .btn_links {
+    width: 17rem;
+
+  }
 }
 
 a {
@@ -477,6 +823,20 @@ ion-icon {
 
 .preset_form button {
   margin: 1rem 0;
+}
+
+.size_or {
+  margin: -1rem;
+}
+
+@media only screen and (max-width: 1100px) {
+  .size_or {
+    margin: 1rem;
+  }
+}
+
+.size_btn {
+  margin: -1rem auto;
 }
 
 
