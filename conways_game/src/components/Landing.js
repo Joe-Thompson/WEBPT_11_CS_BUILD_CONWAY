@@ -11,15 +11,21 @@ function Landing({ setting_up_grid, history, location }) {
          bg_color: 'black',
          accent_color: 'white',
          preset_grid: false,
-        random_grid: false,
-        window_size: window.screen.width
+         random_grid: false,
+         window_size: window.screen.width
     });
 
     const change_handler = (e) => {
+        if (e.target.name === 'rows' || e.target.name === 'cols') {
+            setGrid_data({
+                ...grid_data,
+                [e.target.name]: Number(e.target.value)
+            })
+        } else {
         setGrid_data({
             ...grid_data,
             [e.target.name]: e.target.value
-        })
+        })}
 
     };
 
@@ -80,6 +86,7 @@ console.log(window.screen.width)
                                    min='10'
                                    max='50'
                                    onChange={change_handler}
+                                   placeholder='Number of Rows'
                                    name='rows'/>
                         </span>
                         <span className='grid_x'>X</span>
@@ -87,9 +94,10 @@ console.log(window.screen.width)
                             <label className='grid_label' htmlFor='cols'>Number of Columns</label>
                             <input className='grid_input'
                                    type='number'
-                                   min='10'
-                                   max='50'
+                                   min={10}
+                                   max={50}
                                    onChange={change_handler}
+                                   placeholder='Number of Columns'
                                    name='cols'/>
                         </span>
                     </div>
