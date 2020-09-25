@@ -55,7 +55,11 @@ export function setting_up_grid(data) {
                 else if (data.window_size <= 800) {
                     data.rows = Math.floor(Math.random() * 30) + 10;
                     data.cols = Math.floor(Math.random() * 30) + 10;
-                } else {
+                }
+                else if (data.window_size <= 1100 && data.cols > 35) {
+                    data.cols = Math.floor(Math.random() * 25) + 10;
+                }
+                else {
                 data.rows = Math.floor(Math.random() * 50) + 10;
                 data.cols = Math.floor(Math.random() * 50) + 10;
             }}
