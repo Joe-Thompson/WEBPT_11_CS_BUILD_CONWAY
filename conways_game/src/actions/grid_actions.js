@@ -10,8 +10,6 @@ export const SETTING_PRESET_GRID = 'SETTING_PRESET_GRID';
 
 
 export function setting_up_grid(data) {
-    console.log(`this is the data in the action line 4: ${data}`)
-    console.log(data)
     return dispatch => {
             let grid_data_preset
             if (data.option) {
@@ -41,7 +39,6 @@ export function setting_up_grid(data) {
                     option: data.option,
                     preset_grid_data: grid_data_preset
                 }
-                console.log('past first dispatch')
                 dispatch({ type: SETTING_PRESET_GRID, payload: {
                     data_grid
                     }})
@@ -57,14 +54,24 @@ export function setting_up_grid(data) {
                     data.cols = Math.floor(Math.random() * 30) + 10;
                 }
                 else if (data.window_size <= 1100) {
-                    data.cols = Math.floor(Math.random() * 25) + 10;
+                    data.rows = Math.floor(Math.random() * 25) + 10;
                     data.cols = Math.floor(Math.random() * 25) + 10;
                 }
                 else {
                 data.rows = Math.floor(Math.random() * 50);
                 data.cols = Math.floor(Math.random() * 50);
+                console.log(data)
+                dispatch({ type: SETTING_RANDOM_GRID, payload: {
+                            data
+                        }})
             }}
             if (data.random_grid === 'true') {
+                if (data.window_size <= 500 && data.cols > 26) {
+                    data.cols = 25
+                }
+                if (data.window_size <= 800 && data.cols > 40) {
+                    data.cols = 40
+                }
                 dispatch({ type: SETTING_RANDOM_GRID, payload: {
                     data
                     }})
@@ -81,7 +88,6 @@ export function setting_up_grid(data) {
             if (data.window_size <= 800 && data.cols > 40) {
                 data.cols = 40
             }
-            console.log('past second dispatch')
             dispatch({ type: SETTING_GRID_PROPERTIES, payload: {
             data
             }}

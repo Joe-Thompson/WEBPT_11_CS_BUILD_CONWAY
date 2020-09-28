@@ -7,8 +7,8 @@ import { SETTING_GRID_PROPERTIES,
 const initial_state = {
     rows: 25,
     cols: 25,
-    bg_color: 'white',
-    accent_color: 'black',
+    bg_color: 'black',
+    accent_color: 'white',
     random_grid: false,
     random_size: false,
     preset_grid: false,
@@ -18,7 +18,6 @@ const initial_state = {
 };
 
 export function Main_Reducer(state = initial_state, action) {
-    console.log(action.payload)
     switch (action.type) {
         case SETTING_GRID_PROPERTIES:
             return {
