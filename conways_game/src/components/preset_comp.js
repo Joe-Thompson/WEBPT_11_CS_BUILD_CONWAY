@@ -31,7 +31,7 @@ function Preset_Comp({ setting_up_grid, history }) {
                     />
                 </div>
                 <div className='preset_option'>
-                    <label htmlFor='name'>Every Other</label>
+                    <label htmlFor='name'>Poke a Dots</label>
                     <img src={diagonal}
                          alt='diagonal'
                          onClick={() => {
