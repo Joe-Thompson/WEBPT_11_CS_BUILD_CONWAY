@@ -5,7 +5,7 @@ import neighborhood from '../images/research/neighborhood.png';
 import game_of_life_logo from '../images/research/game_of_life.jpeg'
 
 function Dashboard({ grid_state }) {
-console.log(grid_state)
+
     let numRows = Number(grid_state.rows)
     let numCols = Number(grid_state.cols)
 
@@ -27,7 +27,6 @@ console.log(grid_state)
         for (let i = 0; i < numRows; i++) {
             rows.push(Array.from(Array(numCols), () => 0));
         }
-        console.log(rows)
         return rows
     }
 
@@ -68,8 +67,6 @@ console.log(grid_state)
         }
         setGrid(current_grid => {
             return produce(current_grid, gridCopy => {
-                console.log('this is line 78 in dashboard')
-                console.log(current_grid)
                 for (let i = 0; i < numRows; i++) {
                     for (let k = 0; k < numCols; k++) {
                         let neighbors = 0;
@@ -90,8 +87,7 @@ console.log(grid_state)
         })
         setTimeout(runGame, 300)
     },[numCols, numRows, ops])
-console.log('this is the current state of the app from line 63 in dashboard')
-console.log(grid_state)
+
     return (
         <>
             <div className='dashboard_container'>

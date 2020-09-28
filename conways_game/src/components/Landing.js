@@ -29,10 +29,7 @@ function Landing({ setting_up_grid, history, location }) {
 
     };
 
-console.log(window.screen.width)
     const submit_handler = (e) => {
-        console.log('this is the data in the submit handler')
-        console.log(grid_data)
         e.preventDefault()
         setting_up_grid(grid_data)
         history.push('/dashboard')
