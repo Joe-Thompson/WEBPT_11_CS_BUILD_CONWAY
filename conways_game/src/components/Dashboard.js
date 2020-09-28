@@ -93,7 +93,7 @@ function Dashboard({ grid_state }) {
             })
         })
         setTimeout(runGame, 300)
-    },[numCols, numRows, ops, countNeighbors])
+    },[numCols, numRows, countNeighbors])
     return (
         <>
             <div className='dashboard_container'>
