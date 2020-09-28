@@ -58,6 +58,20 @@ function Dashboard({ grid_state }) {
         }
     }
 
+    // function to count neighbors, use wrap around of the grid
+    function countNeighbors(grid, x, y) {
+        let sum = 0;
+        for (let i = -1; i < 2; i++) {
+            for (let k = -1; k < 2; k++) {
+                let newI = (x + i + numCols) % numCols;
+                let newK = (y + k + numRows) % numRows;
+                sum += grid[newI][newK]
+            }
+        }
+        sum -= grid[x][y]
+        return sum
+    }
+
     const runningRef = useRef(running);
     runningRef.current = running;
 
@@ -69,15 +83,8 @@ function Dashboard({ grid_state }) {
             return produce(current_grid, gridCopy => {
                 for (let i = 0; i < numRows; i++) {
                     for (let k = 0; k < numCols; k++) {
-                        let neighbors = 0;
-                        ops.forEach(([x, y]) => {
-                            const newI = i + x;
-                            const newK = k + y;
-                            if (newI >= 0 && newI < numRows && newK >= 0 && newK < numCols) {
-                                neighbors += current_grid[newI][newK]
-                            }
-                        })
-                        if (neighbors < 2 || neighbors > 3) {
+                      let neighbors = countNeighbors(current_grid, i, k)
+                        if (current_grid[i][k] === 1 && (neighbors < 2 || neighbors > 3)) {
                             gridCopy[i][k] = 0;
                         } else if (current_grid[i][k] === 0 && neighbors === 3) {
                             gridCopy[i][k] = 1;
@@ -86,8 +93,7 @@ function Dashboard({ grid_state }) {
             })
         })
         setTimeout(runGame, 300)
-    },[numCols, numRows, ops])
-
+    },[numCols, numRows, ops, countNeighbors])
     return (
         <>
             <div className='dashboard_container'>

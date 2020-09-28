@@ -11,6 +11,9 @@ export const SETTING_PRESET_GRID = 'SETTING_PRESET_GRID';
 
 export function setting_up_grid(data) {
     return dispatch => {
+        if (data.rows > data.cols) {
+            data.rows = data.cols
+        }
             let grid_data_preset
             if (data.option) {
                 if (data.name === "glider") {
