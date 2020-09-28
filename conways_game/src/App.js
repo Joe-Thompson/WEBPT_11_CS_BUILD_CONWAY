@@ -13,8 +13,8 @@ function App() {
   return (
     <div className="App">
         <Nav />
-        <Route exact path='/landing' component={Title} />
-        <Route exact path='/landing' component={New_Landing} />
+        <Route exact path='/' component={Title} />
+        <Route exact path='/' component={New_Landing} />
         <Route exact path='/presets' component={Preset_Comp} />
         <Route exact path='/dashboard' component={Dashboard} />
         <Route exact path='/about' component={About} />
