@@ -9,7 +9,6 @@ function Dashboard({ grid_state }) {
     const [generation, setGeneration] = useState(0)
     let numRows = Number(grid_state.rows)
     let numCols = Number(grid_state.cols)
-    let counter = 0;
 
     const empty_grid = () => {
         const rows = [];
@@ -68,7 +67,6 @@ function Dashboard({ grid_state }) {
             sum -= grid[x][y]
             return sum
         }
-        counter = counter + 1
         setGrid(current_grid => {
             return produce(current_grid, gridCopy => {
                 for (let i = 0; i < numRows; i++) {
