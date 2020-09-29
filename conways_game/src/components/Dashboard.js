@@ -39,6 +39,7 @@ function Dashboard({ grid_state }) {
     })
 
     const handle_preset_reload = () => {
+        setGeneration(0)
         if (!grid_state.preset_grid_data) {
             return setGrid(empty_grid);
         } else {
@@ -147,6 +148,7 @@ function Dashboard({ grid_state }) {
                     <button
                         className='grid_controls'
                         onClick={() => {
+                            setGeneration(0)
                         const rows = [];
                         for (let i = 0; i < numRows; i++) {
                             rows.push(Array.from(Array(numCols), () => Math.random() > .7 ? 1 : 0));
@@ -157,7 +159,10 @@ function Dashboard({ grid_state }) {
                     </button>
                     <button
                         className='grid_controls'
-                        onClick={() => setGrid(empty_grid)}>
+                        onClick={() => {
+                            setGeneration(0)
+                            setGrid(empty_grid)
+                        }}>
                         <ion-icon name="close-outline">"."</ion-icon>
                     </button>
                 <div className='btn_labels'>
