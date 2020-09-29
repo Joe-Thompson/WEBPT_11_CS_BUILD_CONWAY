@@ -6,9 +6,10 @@ import game_of_life_logo from '../images/research/game_of_life.jpeg'
 
 function Dashboard({ grid_state }) {
 
+    const [generation, setGeneration] = useState(0)
     let numRows = Number(grid_state.rows)
     let numCols = Number(grid_state.cols)
-
+    let counter = 0;
 
     const empty_grid = () => {
         const rows = [];
@@ -67,6 +68,7 @@ function Dashboard({ grid_state }) {
             sum -= grid[x][y]
             return sum
         }
+        counter = counter + 1
         setGrid(current_grid => {
             return produce(current_grid, gridCopy => {
                 for (let i = 0; i < numRows; i++) {
@@ -80,8 +82,12 @@ function Dashboard({ grid_state }) {
                 }}
             })
         })
-        setTimeout(runGame, 300)
+        setTimeout(() => {
+            runGame()
+            setGeneration(prevState => (prevState + 1))
+        }, 300)
     },[numCols, numRows])
+    console.log(generation)
     return (
         <>
             <div className='dashboard_container'>
@@ -107,6 +113,7 @@ function Dashboard({ grid_state }) {
                             />
                         ))
                     )}
+                    <p>Generations: {generation}</p>
                 </div>
                 <div className='rules_container'>
                     <h3 className='rules_title'>How to Play...</h3>
